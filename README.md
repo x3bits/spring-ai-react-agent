@@ -171,6 +171,7 @@ public class ReActAgentConfig {
  - 创建一个MySQL的库，在里面创建如下两张表：
 [schema.sql](spring-ai-react-agent-web/scripts/schema.sql)
 [mysql-schema.sql](spring-ai-react-agent-saver/spring-ai-react-agent-saver-jdbc-template/scripts/mysql-schema.sql)
+你可能也需要更新[application.yml](spring-ai-react-agent-example/src/main/resources/application.yml)中对应的数据库配置。
  - 安装本项目到本地maven，打包并运行示例工程
 ```bash
 mvn clean install

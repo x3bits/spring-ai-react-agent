@@ -170,8 +170,10 @@ For complete example code, please refer to [spring-ai-react-agent-example](sprin
 - Configure the environment variable OPEN_AI_APIKEY with your model's API key. The example project uses Alibaba Cloud's qwen-plus model. If you want to use other models, please modify the base-url and model configuration in application.yml.
 - Create a MySQL database and create the following two tables in it:
   [schema.sql](spring-ai-react-agent-web/scripts/schema.sql)
-  [mysql-schema.sql](spring-ai-react-agent-saver/spring-ai-react-agent-saver-jdbc-template/scripts/mysql-schema.sql)
-- Install this project to local Maven, package and run the example project
+  [mysql-schema.sql](spring-ai-react-agent-saver/spring-ai-react-agent-saver-jdbc-template/scripts/mysql-schema.sql).
+You may also need to update the configuration in [application.yml](spring-ai-react-agent-example/src/main/resources/application.yml).
+
+- Install this project to local Maven, package and run the example project.
 ```bash
 mvn clean install
 cd spring-ai-react-agent-example
