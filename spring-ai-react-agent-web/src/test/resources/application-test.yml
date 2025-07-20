@@ -1,0 +1,42 @@
+spring:
+  # H2 Database Configuration for Testing
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 5
+      minimum-idle: 2
+
+  # H2 Console Configuration (for debugging)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+# JDBC Configuration for Testing
+# JdbcTemplate is auto-configured by Spring Boot using the datasource configuration above
+
+# Logging Configuration
+logging:
+  level:
+    com.x3bits.springaireactagent: DEBUG
+    org.springframework.jdbc: DEBUG
+    org.springframework.jdbc.core: DEBUG
+    root: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

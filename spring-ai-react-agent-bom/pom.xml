@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.x3bits.springaireactagent</groupId>
+        <artifactId>spring-ai-react-agent-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>spring-ai-react-agent-bom</artifactId>
+    <packaging>pom</packaging>
+    <name>spring-ai-react-agent-bom</name>
+    <description>Bill of Materials (BOM) for Spring AI React Agent modules</description>
+
+    <properties>
+        <maven.deploy.skip>false</maven.deploy.skip>
+        <maven.install.skip>false</maven.install.skip>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Core module -->
+            <dependency>
+                <groupId>com.x3bits.springaireactagent</groupId>
+                <artifactId>spring-ai-react-agent-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Web module -->
+            <dependency>
+                <groupId>com.x3bits.springaireactagent</groupId>
+                <artifactId>spring-ai-react-agent-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Starter module -->
+            <dependency>
+                <groupId>com.x3bits.springaireactagent</groupId>
+                <artifactId>spring-ai-react-agent-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Saver modules -->
+            <dependency>
+                <groupId>com.x3bits.springaireactagent</groupId>
+                <artifactId>spring-ai-react-agent-saver-jdbc-template</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Message serializer modules -->
+            <dependency>
+                <groupId>com.x3bits.springaireactagent</groupId>
+                <artifactId>spring-ai-react-agent-message-serializer-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.x3bits.springaireactagent</groupId>
+                <artifactId>spring-ai-react-agent-message-serializer-json</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

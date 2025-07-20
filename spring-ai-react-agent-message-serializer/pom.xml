@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.x3bits.springaireactagent</groupId>
+        <artifactId>spring-ai-react-agent-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>spring-ai-react-agent-message-serializer</artifactId>
+    <packaging>pom</packaging>
+    <name>spring-ai-react-agent-message-serializer</name>
+
+    <modules>
+        <module>spring-ai-react-agent-message-serializer-common</module>
+        <module>spring-ai-react-agent-message-serializer-json</module>
+    </modules>
+
+</project> 

@@ -1,0 +1,35 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: spring-ai-react-agent-example
+
+  # Database Configuration
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_ai_react_agent?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 10
+      minimum-idle: 5
+
+  # Jackson Configuration - 兼容Python API的snake_case命名
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+  ai:
+    react-agent:
+      enabled: true
+
+logging:
+  level:
+    com.x3bits.springaireactagent: DEBUG
+    root: INFO
