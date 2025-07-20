@@ -26,6 +26,12 @@ spring:
       fail-on-unknown-properties: false
 
   ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      chat:
+        options:
+          model: qwen-plus
     react-agent:
       enabled: true
 

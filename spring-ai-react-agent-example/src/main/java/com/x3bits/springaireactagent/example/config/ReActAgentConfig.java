@@ -9,6 +9,7 @@ import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,21 +18,24 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class ReActAgentConfig {
 
     @Bean
-    public ChatModel chatModel() {
-        String apiKey = System.getenv("OPENAI_API_KEY");
+    public ChatModel chatModel(
+            @Value("${spring.ai.openai.api-key}") String apiKey,
+            @Value("${spring.ai.openai.base-url}") String baseUrl,
+            @Value("${spring.ai.openai.chat.options.model}") String model) {
+
         if (apiKey == null || apiKey.isEmpty()) {
-            throw new IllegalStateException("OPENAI_API_KEY environment variable is required");
+            throw new IllegalStateException("spring.ai.openai.api-key configuration is required");
         }
 
         return OpenAiChatModel.builder()
                 .openAiApi(
                         OpenAiApi.builder()
                                 .apiKey(apiKey)
-                                .baseUrl("https://dashscope.aliyuncs.com/compatible-mode")
+                                .baseUrl(baseUrl)
                                 .build())
                 .defaultOptions(
                         OpenAiChatOptions.builder()
-                                .model("qwen-plus")
+                                .model(model)
                                 .build())
                 .build();
     }

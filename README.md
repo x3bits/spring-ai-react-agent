@@ -166,7 +166,12 @@ public class ReActAgentConfig {
 完整的示例代码请参考 [spring-ai-react-agent-example](spring-ai-react-agent-example) 。
 
 # 运行示例工程
-clone本仓库
+ - clone本仓库
+ - 配置环境变量OPEN_AI_APIKEY为你的模型的apikey。 示例项目使用的是阿里云的qwen-plus模型，如果使用其它的模型，请修改application.yml中的配置base-url和model。
+ - 创建一个MySQL的库，在里面创建如下两张表：
+[schema.sql](spring-ai-react-agent-web/scripts/schema.sql)
+[mysql-schema.sql](spring-ai-react-agent-saver/spring-ai-react-agent-saver-jdbc-template/scripts/mysql-schema.sql)
+ - 安装本项目到本地maven，打包并运行示例工程
 ```bash
 mvn clean install
 cd spring-ai-react-agent-example
